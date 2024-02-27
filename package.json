@@ -1,0 +1,58 @@
+{
+  "name": "@exotjs/hono",
+  "version": "0.1.0",
+  "description": "Exot Inspector Integration with Hono",
+  "author": "Daniel Regeci",
+  "license": "MIT",
+  "keywords": [
+    "exot",
+    "inspector",
+    "hono"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "denoify": "rimraf deno_dist && denoify && find deno_dist/. -type f -exec sed -i '' -e 's/node:node:/node:/g' {} +",
+    "eslint": "eslint ./lib/**/*",
+    "format": "prettier --write './(lib|tests)/**/*'",
+    "test": "vitest run",
+    "prepare": "husky"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "types": [
+        "./dist/types"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@exotjs/inspector": "^0.1.15",
+    "hono": ">=3.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "denoify": "^1.6.9",
+    "eslint": "^8.57.0",
+    "hono": "^3.11.7",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.0.0",
+    "typescript": "^5.2.2",
+    "vitest": "^1.0.1"
+  }
+}

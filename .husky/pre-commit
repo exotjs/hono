@@ -1,0 +1,5 @@
+npm test
+npm run build
+npm run denoify
+git add dist
+git add deno_dist
