@@ -38,7 +38,7 @@
     }
   },
   "peerDependencies": {
-    "@exotjs/inspector": "^0.1.15",
+    "@exotjs/inspector": "file:../inspector",
     "hono": ">=3.9.0"
   },
   "devDependencies": {
