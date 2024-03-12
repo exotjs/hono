@@ -19,6 +19,7 @@
     "eslint": "eslint ./lib/**/*",
     "format": "prettier --write './(lib|tests)/**/*'",
     "test": "vitest run",
+    "test:deno": "deno test --allow-env tests/deno.ts",
     "prepare": "husky"
   },
   "files": [
