@@ -1,6 +1,6 @@
-import { isInspectorLike } from 'node:@exotjs/inspector/helpers';
+import { isInspectorLike } from 'npm:@exotjs/inspector/helpers';
 import { ExotMiddlewareOptions } from './types.ts';
-import type { MiddlewareHandler } from 'https://deno.land/x/hono@v3.11.12/mod.ts';
+import type { MiddlewareHandler } from 'https://deno.land/x/hono@v4.1.0/mod.ts';
 
 export const inspectorMiddleware = (
   options: ExotMiddlewareOptions

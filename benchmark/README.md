@@ -8,6 +8,7 @@ Start the servers with Bun and run the bechmark for each scenario:
 bun run baseline.ts
 bun run trace-active.ts
 bun run trace-disabled.ts
+bun run trace-10x.ts
 bun run inspector-disabled.ts
 ```
 
@@ -80,3 +81,13 @@ Statistics        Avg      Stdev        Max
     others - 0
   Throughput:     4.42MB/s
 ```
+
+#### Tracing enabled with 10 nested traces
+
+Statistics        Avg      Stdev        Max
+  Reqs/sec     14969.42    1197.50   17193.54
+  Latency        6.68ms   628.20us    26.74ms
+  HTTP codes:
+    1xx - 0, 2xx - 449113, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:     2.56MB/s

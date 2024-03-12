@@ -55,15 +55,16 @@ Specify the header name for the "trace ID." Set to null to disable. Default is `
 
 ## Performance
 
-The following table illustrates the performance change per request under three different scenarios.
+The following table illustrates the performance change per request under different scenarios.
 
 |Test|Change per request|
 |----|------|
 |Inspector deactivated|+0.24ms|
 |Tracing disabled (metrics only)|+0.96ms|
 |Tracing enabled (metrics + tracing)|+2.21ms|
+|Tracing enabled (metrics + 10x tracing)|+5.03ms|
 
-As a rule of thumb, approximately ~1ms is added to each request when tracing is disabled and only server metrics are collected. If the entire inspector, including metrics, is deactivated, only negligible sub-milliseconds are added to each request. With tracing enabled and metrics collected, expect about ~2ms.
+As a rule of thumb, approximately ~1ms is added to each request when tracing is disabled and only server metrics are collected. If the entire inspector, including metrics, is deactivated, only negligible sub-milliseconds are added to each request. With tracing enabled and metrics collected, expect about ~2ms. The last test measures 10 nested traces, where you should expect about ~5ms overhead.
 
 Refer to the [benchmark](/benchmark) folder for more details.
 

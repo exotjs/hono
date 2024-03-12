@@ -1,4 +1,4 @@
-import type { Inspector } from 'node:@exotjs/inspector';
+import type { Inspector } from 'npm:@exotjs/inspector';
 
 export interface ExotMiddlewareOptions {
   inspector: Inspector;
